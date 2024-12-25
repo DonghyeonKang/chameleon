@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  core:
+    build:
+      context: ./core
+      dockerfile: Dockerfile
+    container_name: core_service
+    environment:
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+    volumes:
+      - ~/.aws:/root/.aws:ro # AWS 자격 증명 공유
+    restart: always
