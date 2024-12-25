@@ -1,5 +1,6 @@
 # Core 폴더 내부의 민감한 파일
 core/secure.env
+core/route53_records.json
 
 web/gradle
 web/.gradle
