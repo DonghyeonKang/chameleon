@@ -1,0 +1,6 @@
+# Core 폴더 내부의 민감한 파일
+core/secure.env
+
+web/gradle
+web/.gradle
+web/build

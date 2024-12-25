@@ -6,10 +6,8 @@ services:
       context: ./core
       dockerfile: Dockerfile
     container_name: core_service
-    environment:
-      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
-      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+    env_file:
+      - ./core/secure.env  # secure.env 파일에서 환경 변수를 읽어옵니다.
     volumes:
-      - ~/.aws:/root/.aws:ro # AWS 자격 증명 공유
+      - ~/.aws:/root/.aws:ro
     restart: always
