@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 필요 파일 복사
 COPY requirements.txt requirements.txt
-COPY update_ip.py update_ip.py
+COPY main.py main.py
 
 # 필요한 Python 패키지 설치
 RUN pip install --no-cache-dir -r requirements.txt
@@ -15,4 +15,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y awscli && apt-get clean
 
 # 실행할 스크립트 지정
-CMD ["python", "update_ip.py"]
+CMD ["python", "main.py"]
