@@ -5,3 +5,5 @@ core/route53_records.json
 web/gradle
 web/.gradle
 web/build
+
+venv/
